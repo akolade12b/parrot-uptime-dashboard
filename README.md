@@ -151,6 +151,62 @@ This removes the launcher, the tracker service and the autostart entry, and
 asks before deleting the historical database.  The application files
 themselves are left in place.
 
+## FAQ
+
+**Does it need root?**
+No. Everything runs as your user. `sudo` is only used by the installer to
+add `python3-tk` or `python3-matplotlib` if they are missing.
+
+**Does it send any data anywhere?**
+No. The application has no network code, no telemetry, and no remote
+assets. It reads `/proc`, journald, wtmp, and its own SQLite database.
+
+**Why do some old days show "no data"?**
+Historical accuracy is limited by what `journalctl` and wtmp still retain.
+Days before the earliest record are shown as unknown rather than guessed,
+and days the machine was off are shown as 0h.
+
+**Why does the tracker run as a systemd user service?**
+So history keeps accumulating even when the GUI is closed. It ticks once
+per minute and reconciles with journald/wtmp every ten minutes.
+
+**Can I use it outside Parrot MATE?**
+The dashboard is designed for Parrot's MATE desktop, but any Linux desktop
+with Tkinter and matplotlib should work. The MATE launcher and theme
+detection are the only MATE-specific parts.
+
+**Where is my data stored?**
+`~/.local/share/parrot-uptime-dashboard/uptime.db`. Removing that directory
+(or running `./uninstall.sh` and confirming) deletes the history.
+
+## Troubleshooting
+
+**The history is empty or starts only today.**
+Check that journald has data (`journalctl --list-boots`) and that wtmp
+exists (`last reboot`). If journald is restricted for your user, `last`
+is used as a fallback; if neither has old records, nothing can be
+reconstructed.
+
+**The chart is blank.**
+Matplotlib is missing or failed to load. Install `python3-matplotlib` and
+start the app from a terminal to see the traceback.
+
+**The tracker is not recording.**
+```bash
+systemctl --user status  parrot-uptime-tracker
+systemctl --user restart parrot-uptime-tracker
+tail -n 50 ~/.local/share/parrot-uptime-dashboard/tracker.log
+```
+
+**The menu entry disappeared.**
+Re-run `./install.sh`; it recreates the launcher under
+`~/.local/share/applications`.
+
+**The database looks corrupt.**
+Stop the tracker, move `~/.local/share/parrot-uptime-dashboard/uptime.db`
+aside, and restart. A fresh database is rebuilt from journald/wtmp where
+available.
+
 ## Notes / limitations
 
 * Historical accuracy is bounded by what journald and wtmp retain.  The

@@ -34,5 +34,8 @@ jobs:
       - name: Smoke-test headless modules
         run: python -c "import config, database, uptime, tracker"
 
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -t . -v
+
       - name: Shell syntax check
         run: bash -n install.sh uninstall.sh

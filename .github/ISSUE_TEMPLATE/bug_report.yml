@@ -1,0 +1,58 @@
+name: Bug report
+description: Something in the dashboard is not working as expected
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Please do **not** include private data from
+        your logs, and use the Security tab for vulnerabilities.
+
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      placeholder: 1.0.0, or the output of `git rev-parse --short HEAD`
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Distribution and Python version
+      placeholder: Parrot 7 / MATE, Python 3.13.2
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What you expected versus what you saw.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open the dashboard
+        2. Select the 90-day range
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostic output (optional)
+      description: Output of `journalctl --list-boots` and `last reboot`, if the issue is about history.
+      render: shell
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Tracker log (optional)
+      description: Last lines of `~/.local/share/parrot-uptime-dashboard/tracker.log`.
+      render: shell
