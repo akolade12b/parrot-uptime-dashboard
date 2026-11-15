@@ -1,0 +1,7 @@
+# Python dependencies for Parrot Uptime Dashboard.
+#
+# tkinter and sqlite3 are part of the Python standard library and need no
+# separate install beyond the distro packages listed below.
+#
+# Third-party:
+matplotlib>=3.5

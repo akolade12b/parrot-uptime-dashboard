@@ -1,0 +1,16 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Runtime data (user history, database, logs)
+uptime_history.json
+*.db
+*.log
+
+# Environment / editor
+.env
+.venv/
+venv/
+.idea/
+.vscode/
+.DS_Store
