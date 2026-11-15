@@ -4,4 +4,4 @@
 # separate install beyond the distro packages listed below.
 #
 # Third-party:
-matplotlib>=3.5
+matplotlib>=3.11.2
