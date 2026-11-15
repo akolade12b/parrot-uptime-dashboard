@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Python ${{ matrix.python-version }}
+    # ubuntu-22.04 still ships prebuilt CPython 3.9; ubuntu-latest (26.04) does not.
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Byte-compile all sources
+        run: python -m compileall -q .
+
+      - name: Smoke-test headless modules
+        run: python -c "import config, database, uptime, tracker"
+
+      - name: Shell syntax check
+        run: bash -n install.sh uninstall.sh

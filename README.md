@@ -1,5 +1,38 @@
 # Parrot Uptime Dashboard
 
+<p align="center">
+  <img alt="Platform" src="https://img.shields.io/badge/platform-Linux%20%C2%B7%20Parrot%20OS-2ea382?style=flat-square&logo=linux&logoColor=white">
+  <img alt="Python" src="https://img.shields.io/badge/python-3.9%2B-3776AB?style=flat-square&logo=python&logoColor=white">
+  <img alt="GUI" src="https://img.shields.io/badge/GUI-Tkinter-ff6f00?style=flat-square&logo=python&logoColor=white">
+  <img alt="Charts" src="https://img.shields.io/badge/charts-Matplotlib-11557c?style=flat-square">
+  <img alt="Storage" src="https://img.shields.io/badge/storage-SQLite-003b57?style=flat-square&logo=sqlite&logoColor=white">
+  <img alt="Offline" src="https://img.shields.io/badge/network-offline%20%C2%B7%20no%20telemetry-4c8c4a?style=flat-square">
+  <img alt="Root" src="https://img.shields.io/badge/root-not%20required-success?style=flat-square">
+</p>
+
+<p align="center">
+  <a href="https://github.com/akolade12b/parrot-uptime-dashboard/releases"><img alt="Release" src="https://img.shields.io/github/v/release/akolade12b/parrot-uptime-dashboard?style=flat-square&logo=github"></a>
+  <img alt="Release date" src="https://img.shields.io/github/release-date/akolade12b/parrot-uptime-dashboard?style=flat-square">
+  <img alt="Last commit" src="https://img.shields.io/github/last-commit/akolade12b/parrot-uptime-dashboard?style=flat-square&logo=git&logoColor=white">
+  <img alt="Commit activity" src="https://img.shields.io/github/commit-activity/m/akolade12b/parrot-uptime-dashboard?style=flat-square">
+  <img alt="Stars" src="https://img.shields.io/github/stars/akolade12b/parrot-uptime-dashboard?style=flat-square&logo=github">
+  <img alt="Forks" src="https://img.shields.io/github/forks/akolade12b/parrot-uptime-dashboard?style=flat-square&logo=github">
+  <img alt="Watchers" src="https://img.shields.io/github/watchers/akolade12b/parrot-uptime-dashboard?style=flat-square&logo=github">
+  <img alt="Issues" src="https://img.shields.io/github/issues/akolade12b/parrot-uptime-dashboard?style=flat-square&logo=github">
+  <img alt="Pull requests" src="https://img.shields.io/github/issues-pr/akolade12b/parrot-uptime-dashboard?style=flat-square&logo=github">
+  <img alt="Contributors" src="https://img.shields.io/github/contributors/akolade12b/parrot-uptime-dashboard?style=flat-square&logo=github">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/akolade12b/parrot-uptime-dashboard?style=flat-square">
+  <img alt="Code size" src="https://img.shields.io/github/languages/code-size/akolade12b/parrot-uptime-dashboard?style=flat-square">
+  <img alt="Top language" src="https://img.shields.io/github/languages/top/akolade12b/parrot-uptime-dashboard?style=flat-square">
+  <img alt="Followers" src="https://img.shields.io/github/followers/akolade12b?style=flat-square&logo=github">
+</p>
+
+<p align="center">
+  <a href="https://github.com/akolade12b/parrot-uptime-dashboard/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/akolade12b/parrot-uptime-dashboard/actions/workflows/ci.yml/badge.svg?branch=main"></a>
+  <a href="https://github.com/akolade12b/parrot-uptime-dashboard/actions/workflows/codeql.yml"><img alt="CodeQL" src="https://github.com/akolade12b/parrot-uptime-dashboard/actions/workflows/codeql.yml/badge.svg?branch=main"></a>
+  <img alt="Commits since release" src="https://img.shields.io/github/commits-since/akolade12b/parrot-uptime-dashboard/v1.0.0?style=flat-square&logo=git&logoColor=white">
+</p>
+
 A native graphical uptime dashboard for the Parrot OS **MATE** desktop.
 It shows how long the computer has been running, with historical uptime
 graphed per day, and keeps accumulating reliable history automatically.
